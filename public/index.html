@@ -18,9 +18,11 @@
 
 <body>
     <div class="wrapper">
-        <div class="total">
-            <span class="leftFade">Current balance : $ </span><span class="rightFade" id="total">0</span></div>
-        <br>
+        <div class="d-flex justify-content-center">
+            <div class="total titleBackdrop">
+                <span class="fadeIn">Current balance : $ </span><span class="fadeIn" id="total">0</span></div>
+        </div>
+
 
         <div class="d-flex justify-content-center">
             <div class="form fadeIn">
@@ -31,7 +33,7 @@
                 <p class="error"></p>
             </div>
         </div>
-        <br>
+
         <div class="backdrop fadeIn">
             <div class="transactions fadeIn scroller">
                 <table>
@@ -46,9 +48,9 @@
             </div>
         </div>
 
-        <br>
-
-        <canvas id="myChart"></canvas>
+        <div class="chartBackdrop">
+            <canvas id="myChart"></canvas>
+        </div>
     </div>
 
     <script>
