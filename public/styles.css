@@ -1,7 +1,7 @@
 body {
     font-size: 120%;
     /* font-family: Arial; */
-    background-color: #d1d1d1;
+    background-color: #9e9c9b;
     color: black;
 }
 
@@ -78,7 +78,7 @@ tr:nth-child(even) {
 }
 
 .positive {
-    color: #83a181;
+    color: #28a745;
 }
 
 .negative {
