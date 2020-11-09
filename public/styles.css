@@ -1,51 +1,157 @@
 body {
-  font-size: 120%;
-  font-family: Arial;
+    font-size: 120%;
+    /* font-family: Arial; */
+    background-color: #d1d1d1;
+    color: black;
 }
 
-button, input {
-  font-size: 100%;
-  font-family: Arial;
+button,
+input {
+    font-size: 100%;
+    padding: 5px;
 }
 
 table {
-  width: 100%;
+    width: 100%;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.backdrop {
+    background-color: #d1d1d1;
+    box-shadow: 2px 4px 3px #888888;
+}
+
+.shadow {
+    box-shadow: 2px 4px 3px #888888;
+    max-width: 751px;
+    max-height: 43px;
+}
+
+.shadowed {
+    box-shadow: 2px 4px 3px #888888;
+    /* max-width: 751px;
+    max-height: 43px; */
+}
+
+td,
+th {
+    border: 1px solid #9e9e98;
+    text-align: left;
+    padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+    background-color: #d9d9d9;
 }
 
 .error {
-  color: red;
+    color: red;
 }
 
 .wrapper {
-  margin: 0 auto;
-  max-width: 825px;
-  text-align: center;
-}
-
-.total {
-  font-size: 150%;
-  text-decoration: underline;
+    margin: 0 auto;
+    max-width: 1025px;
+    text-align: center;
 }
 
 .form {
-  margin-top: 25px;
-  width: 100%;
+    /* margin-top: 25px; */
+    width: 100%;
 }
 
 .transactions {
-  text-align: left;
-  max-height: 300px;
-  overflow: auto;
-  width: 90%;
-  margin: 0 auto;
+    text-align: left;
+    max-height: 300px;
+    overflow: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.positive {
+    color: #83a181;
+}
+
+.negative {
+    color: #bd2626;
+}
+
+.tableHead {
+    background-color: #d9d9d9;
+}
+
+
+/* animation keyframes */
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* animation triggers */
+
+.rightFade {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+}
+
+.leftFade {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+}
+
+.scroller::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+.scroller::-webkit-scrollbar-track {
+    background: #d9d9d9
+    /* color of the tracking area */
+}
+
+.scroller::-webkit-scrollbar-thumb {
+    background-color: #b3b0a8;
+    /* color of the scroll thumb */
+    /* border-radius: 20px; */
+    /* roundness of the scroll thumb */
+    border: 3px solid #b3b0a8;
+    border-radius: 2px;
+    /* creates padding around scroll thumb */
 }

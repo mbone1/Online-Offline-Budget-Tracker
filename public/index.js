@@ -22,8 +22,17 @@ function populateTotal() {
 
   let totalEl = document.querySelector("#total");
   totalEl.textContent = total;
-}
 
+  if (total > 0) {
+    document.getElementById("total").classList.add("positive")
+    document.getElementById("total").classList.remove("negative")
+  }
+  else if (total < 0){
+    document.getElementById("total").classList.add("negative")
+    document.getElementById("total").classList.remove("positive")
+  }
+}
+ 
 function populateTable() {
   let tbody = document.querySelector("#tbody");
   tbody.innerHTML = "";
@@ -31,10 +40,18 @@ function populateTable() {
   transactions.forEach(transaction => {
     // create and populate a table row
     let tr = document.createElement("tr");
-    tr.innerHTML = `
+    if (transaction.value > 0) {
+      tr.innerHTML = `
       <td>${transaction.name}</td>
-      <td>${transaction.value}</td>
+      <td class="positive">${transaction.value}</td>
     `;
+    }
+    else if (transaction.value < 0) {
+      tr.innerHTML = `
+      <td>${transaction.name}</td>
+      <td class="negative">${transaction.value}</td>
+    `;
+    }
 
     tbody.appendChild(tr);
   });
@@ -65,16 +82,18 @@ function populateChart() {
   let ctx = document.getElementById("myChart").getContext("2d");
 
   myChart = new Chart(ctx, {
-    type: 'line',
-      data: {
-        labels,
-        datasets: [{
-            label: "Total Over Time",
-            fill: true,
-            backgroundColor: "#6666ff",
-            data
-        }]
-    }
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Total Over Time",
+          fill: true,
+          backgroundColor: "#a693b8",
+          data,
+        },
+      ],
+    },
   });
 }
 

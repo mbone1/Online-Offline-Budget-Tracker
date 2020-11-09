@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#317EFB">
     <link rel="shortcut icon" href="icons/icon-192x192.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -18,28 +19,34 @@
 <body>
     <div class="wrapper">
         <div class="total">
-            <div class="total">Your total is: $<span id="total">0</span></div>
+            <span class="leftFade">Current balance : $ </span><span class="rightFade" id="total">0</span></div>
+        <br>
+
+        <div class="d-flex justify-content-center">
+            <div class="form fadeIn">
+                <input type="text" class="fadeIn shadowed" id="t-name" placeholder="Name of transaction" />
+                <input type="number" class="fadeIn shadowed" min="0" id="t-amount" placeholder="Transaction amount" />
+                <button id="add-btn" class="btn btn-success fadeIn shadowed"><i class="fa fa-plus buttons "></i> Add Funds</button>
+                <button id="sub-btn" class="btn btn-danger fadeIn shadowed"><i class="fa fa-minus"></i> Subtract Funds</button>
+                <p class="error"></p>
+            </div>
+        </div>
+        <br>
+        <div class="backdrop fadeIn">
+            <div class="transactions fadeIn scroller">
+                <table>
+                    <thead>
+                        <th class="tableHead">Transaction</th>
+                        <th class="tableHead">Amount</th>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="form">
-            <input type="text" id="t-name" placeholder="Name of transaction" />
-            <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-            <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
-            <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
-            <p class="error"></p>
-        </div>
-
-        <div class="transactions">
-            <table>
-                <thead>
-                    <th>Transaction</th>
-                    <th>Amount</th>
-                </thead>
-                <tbody id="tbody">
-
-                </tbody>
-            </table>
-        </div>
+        <br>
 
         <canvas id="myChart"></canvas>
     </div>
